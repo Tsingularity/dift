@@ -1,7 +1,7 @@
 # Diffusion Features (DIFT)
 This repository contains code for paper "Emergent Correspondence from Image Diffusion". 
 
-### [Project Page](https://diffusionfeatures.github.io/) | [Paper](https://arxiv.org/abs/2205.06255) | [Colab Demo](https://colab.research.google.com/drive/1tUTJ3UJxbqnfvUMvYH5lxcqt0UdUjdq6?usp=sharing)
+### [Project Page](https://diffusionfeatures.github.io/) | [Paper](https://drive.google.com/file/d/13xtD4nunMZipvx2-_frECqA0RjdRSlEH/view?usp=sharing) | [Colab Demo](https://colab.research.google.com/drive/1tUTJ3UJxbqnfvUMvYH5lxcqt0UdUjdq6?usp=sharing)
 
 ![video](./assets/teaser.gif)
 
