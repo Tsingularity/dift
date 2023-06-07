@@ -14,8 +14,8 @@ conda activate dift
 or create a new conda environment and install the packages manually using the 
 shell commands in [setup_env.sh](setup_env.sh).
 
-## Interactive Demo
-We provide an interative jupyter notebook [demo.ipynb](demo.ipynb) to demonstrate the semantic correspondence established by DIFT. After loading two images, you could left-click on an interesting point of the source image on the left, then after 1 or 2 seconds, the corresponding point on the target image will be displayed as a red point on the right, together with a heatmap showing the per-pixel cosine distance calculated using DIFT. Here're two examples on cat and guitar:
+## Interactive Demo: Give it a Try!
+We provide an interative jupyter notebook [demo.ipynb](demo.ipynb) to demonstrate the semantic correspondence established by DIFT, and you could try on your own images! After loading two images, you could left-click on an interesting point of the source image on the left, then after 1 or 2 seconds, the corresponding point on the target image will be displayed as a red point on the right, together with a heatmap showing the per-pixel cosine distance calculated using DIFT. Here're two examples on cat and guitar:
 
 <table>
     <tr>
