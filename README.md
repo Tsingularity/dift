@@ -42,13 +42,15 @@ Here're the explaination for each argument:
 - `input_path`: path to the input image file.
 - `output_path`: path to save the output features as torch tensor.
 - `img_size`: the width and height of the resized image before fed into diffusion model. If set to 0, then no resize operation would be performed thus it will stick to the original image size. It is set to [768, 768] by default. You can decrease this if encountering memory issue.
-- `t`: time step for diffusion, chose from range [0, 1000], must be an integer. It is set to 261 by default for semantic correspondence.
-- `up_ft_index`: the index of the U-Net upsampling block to extract the feature map, chose from [0, 1, 2, 3]. It is set to 1 by default for semantic correspondence.
+- `t`: time step for diffusion, choose from range [0, 1000], must be an integer. `t=261` by default for semantic correspondence.
+- `up_ft_index`: the index of the U-Net upsampling block to extract the feature map, choose from [0, 1, 2, 3]. `up_ft_index=1` by default for semantic correspondence.
 - `prompt`: the prompt used in the diffusion model.
-- `ensemble_size`: the number of repeated images in each batch used to get features. It is set to 8 by default. You can decrease this if encountering memory issue.
+- `ensemble_size`: the number of repeated images in each batch used to get features. `ensemble_size=8` by default. You can reduce this value if encountering memory issue.
 
 The output DIFT tensor spatial size is determined by both `img_size` and `up_ft_index`. If `up_ft_index=0`, the output size would be 1/32 of `img_size`; if `up_ft_index=1`, it would be 1/16; if `up_ft_index=2 or 3`, it would be 1/8. 
 
 ## Application: Edit Propagation
 Using DIFT, we can propagate edits in one image to others that share semantic correspondences, even cross categories and domains:
 <img src="./assets/edit_cat.gif" alt="edit cat" style="width:90%;">
+
+Check out more videos and visualizations in the [project page](https://diffusionfeatures.github.io/). 
