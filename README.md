@@ -38,7 +38,7 @@ python extract_dift.py \
     --prompt 'a photo of a cat' \
     --ensemble_size 8
 ```
-Here're the explaination for each argument:
+Here're the explanation for each argument:
 - `input_path`: path to the input image file.
 - `output_path`: path to save the output features as torch tensor.
 - `img_size`: the width and height of the resized image before fed into diffusion model. If set to 0, then no resize operation would be performed thus it will stick to the original image size. It is set to [768, 768] by default. You can decrease this if encountering memory issue.
