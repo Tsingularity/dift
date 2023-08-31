@@ -2,7 +2,7 @@ import argparse
 import torch
 from PIL import Image
 from torchvision.transforms import PILToTensor
-from src.models.dift_sd import SDFeaturizer
+from dift.models.dift_sd import SDFeaturizer
 
 def main(args):
     dift = SDFeaturizer(args.model_id)
