@@ -161,3 +161,13 @@ cython_debug/
 
 */.DS_Store
 .DS_Store
+
+guided-diffusion/
+davis_results_sd/
+davis_results_adm/
+superpoint-1k/
+hpatches_results/
+superpoint-1k.zip
+SPair-71k.tar.gz
+SPair-71k/
+./guided-diffusion/models/256x256_diffusion_uncond.pt

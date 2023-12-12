@@ -3,11 +3,12 @@ import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
 import numpy as np
+import torch.nn.functional as F
 
 class Demo:
 
     def __init__(self, imgs, ft, img_size):
-        self.ft = ft # NCHW
+        self.ft = ft # N+1, C, H, W
         self.imgs = imgs
         self.num_imgs = len(imgs)
         self.img_size = img_size
@@ -27,28 +28,31 @@ class Demo:
                 axes[i].set_title('target image')
 
         num_channel = self.ft.size(1)
-        cos = nn.CosineSimilarity(dim=1)
 
         def onclick(event):
             if event.inaxes == axes[0]:
                 with torch.no_grad():
-                    
+
                     x, y = int(np.round(event.xdata)), int(np.round(event.ydata))
 
                     src_ft = self.ft[0].unsqueeze(0)
                     src_ft = nn.Upsample(size=(self.img_size, self.img_size), mode='bilinear')(src_ft)
-                    src_vec = src_ft[0, :, y, x].view(1, num_channel, 1, 1)  # 1, C, 1, 1
+                    src_vec = src_ft[0, :, y, x].view(1, num_channel)  # 1, C
 
                     del src_ft
                     gc.collect()
                     torch.cuda.empty_cache()
 
-                    trg_ft = nn.Upsample(size=(self.img_size, self.img_size), mode='bilinear')(self.ft[1:])
-                    cos_map = cos(src_vec, trg_ft).cpu().numpy()  # N, H, W
-                    
+                    trg_ft = nn.Upsample(size=(self.img_size, self.img_size), mode='bilinear')(self.ft[1:]) # N, C, H, W
+                    trg_vec = trg_ft.view(self.num_imgs - 1, num_channel, -1) # N, C, HW
+
                     del trg_ft
                     gc.collect()
                     torch.cuda.empty_cache()
+
+                    src_vec = F.normalize(src_vec) # 1, C
+                    trg_vec = F.normalize(trg_vec) # N, C, HW
+                    cos_map = torch.matmul(src_vec, trg_vec).view(self.num_imgs - 1, self.img_size, self.img_size).cpu().numpy() # N, H, W
 
                     axes[0].clear()
                     axes[0].imshow(self.imgs[0])
@@ -74,5 +78,3 @@ class Demo:
 
         fig.canvas.mpl_connect('button_press_event', onclick)
         plt.show()
-
-        

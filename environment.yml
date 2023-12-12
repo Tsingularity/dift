@@ -84,7 +84,6 @@ dependencies:
   - torchaudio=0.13.1=py310_cu117
   - torchvision=0.14.1=py310_cu117
   - typing_extensions=4.5.0=py310h06a4308_0
-  - tzdata=2023c=h04d1e81_0
   - urllib3=1.26.15=py310h06a4308_0
   - wheel=0.38.4=py310h06a4308_0
   - xformers=0.0.20=py310_cu11.7.1_pyt1.13.1
@@ -129,6 +128,7 @@ dependencies:
       - greenlet==2.0.2
       - grpcio==1.54.2
       - huggingface-hub==0.14.1
+      - imageio==2.33.0
       - importlib-metadata==6.6.0
       - ipykernel==6.23.1
       - ipympl==0.9.3
@@ -145,13 +145,14 @@ dependencies:
       - jupyter-core==5.3.0
       - jupyter-events==0.6.3
       - jupyter-lsp==2.2.0
-      - jupyter-server
+      - jupyter-server==2.6.0
       - jupyter-server-terminals==0.4.4
       - jupyterlab==4.0.0
       - jupyterlab-pygments==0.2.2
       - jupyterlab-server==2.22.1
       - jupyterlab-widgets==3.0.7
       - kiwisolver==1.4.4
+      - lazy-loader==0.3
       - lit==16.0.5
       - markupsafe==2.1.2
       - matplotlib==3.7.1
@@ -163,9 +164,12 @@ dependencies:
       - nbconvert==7.4.0
       - nbformat==5.8.0
       - nest-asyncio==1.5.6
+      - networkx==3.2.1
       - notebook-shim==0.2.3
+      - opencv-python==4.8.1.78
       - overrides==7.3.1
       - packaging==23.1
+      - pandas==2.1.4
       - pandocfilters==1.5.0
       - parso==0.8.3
       - pexpect==4.8.0
@@ -183,10 +187,14 @@ dependencies:
       - python-dateutil==2.8.2
       - python-json-logger==2.0.7
       - python-rapidjson==1.10
+      - pytz==2023.3.post1
       - pyyaml==6.0
+      - pyzmq==25.1.0
       - regex==2023.5.5
       - rfc3339-validator==0.1.4
       - rfc3986-validator==0.1.1
+      - scikit-image==0.22.0
+      - scipy==1.11.4
       - send2trash==1.8.2
       - sh==1.14.3
       - six==1.16.0
@@ -194,6 +202,7 @@ dependencies:
       - soupsieve==2.4.1
       - stack-data==0.6.2
       - terminado==0.17.1
+      - tifffile==2023.9.26
       - tinycss2==1.2.1
       - tokenizers==0.13.3
       - tomli==2.0.1
@@ -204,6 +213,7 @@ dependencies:
       - triton==2.0.0.post1
       - tritonclient==2.33.0
       - typing-inspect==0.6.0
+      - tzdata==2023.3
       - uri-template==1.2.0
       - wcwidth==0.2.6
       - webcolors==1.13
