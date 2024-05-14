@@ -77,7 +77,7 @@ python eval_spair.py \
     --dift_model sd \
     --img_size 768 768 \
     --t 261 \
-    --up_ft_index 2 \
+    --up_ft_index 1 \
     --ensemble_size 8
 ```
 Run the following script to get PCK (both per point and per img) of DIFT_adm on SPair-71k:
